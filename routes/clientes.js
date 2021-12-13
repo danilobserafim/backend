@@ -8,11 +8,6 @@ router.post("/", rotaClientes.postClientes)
 
 router.patch("/", rotaClientes.patchClientes)
 
-router.delete("/", (request, response, next) => {
-    response.status(200).send({
-        mensagem: "tudo certo nos clientes(delete)"
-
-    })
-})
+router.delete("/", rotaClientes.deleteClientes)
 
 module.exports = router

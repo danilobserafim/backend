@@ -19,7 +19,7 @@ exports.patchClientes = (request, response, next) => {
     })
 }
 
-exports.delete = (request, response, next) => {
+exports.deleteClientes = (request, response, next) => {
     response.status(200).send({
         mensagem: "tudo certo nos clientes(delete)"
 

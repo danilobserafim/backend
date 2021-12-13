@@ -1,26 +1,12 @@
 const express = require("express");
 const router = express.Router();
+const rotaClientes = require("../controllers/controllerClientes")
 
-router.get("/", (request, response, next) => {
-    response.status(200).send({
-        mensagem: "tudo certo nos clientes(get)"
+router.get("/", rotaClientes.getClientes)
 
-    })
-})
+router.post("/", rotaClientes.postClientes)
 
-router.post("/", (request, response, next) => {
-    response.status(200).send({
-        mensagem: "tudo certo nos clientes(post)"
-
-    })
-})
-
-router.patch("/", (request, response, next) => {
-    response.status(200).send({
-        mensagem: "tudo certo nos clientes(patch)"
-
-    })
-})
+router.patch("/", rotaClientes.patchClientes)
 
 router.delete("/", (request, response, next) => {
     response.status(200).send({

@@ -3,7 +3,7 @@ const app = express();
 const rotaClientes = require("./routes/clientes")
 const rotaFuncionarios = require("./routes/funcionarios")
 const rotaProdutos = require("./routes/produtos")
-const bodyParser = require("body-parser")
+var bodyParser = require("./node_modules/body-parser/index")
 
 app.use(bodyParser.urlencoded({extend: false}))
 app.use(bodyParser.json())

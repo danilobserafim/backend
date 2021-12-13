@@ -6,7 +6,7 @@ app.use("/clientes", rotaClientes)
 
 app.use((request, response, next) => {
     response.status(200).send({
-        mensagem: "tudo certo"
+        mensagem: "nada por aqui"
     })
 })
 

@@ -3,9 +3,22 @@ const app = express();
 const rotaClientes = require("./routes/clientes")
 const rotaFuncionarios = require("./routes/funcionarios")
 const rotaProdutos = require("./routes/produtos")
+const bodyParser = require("body-parser")
 
+app.use(bodyParser.urlencoded({extend: false}))
+app.use(bodyParser.json())
 
+app.use((request, response, next) => {
+    response.header("Access-Control-Allow-Origin", "*")
+    response.header("Access-Control-Allow-Header", 
+    "Origin, X-Requested-Width, Content-Type, Acept, Authorization")
 
+    if (request.method === 'OPTIONS') {
+        response.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, GET, DELETE")    
+        return response.status(200).send({})    
+    }
+    next();
+})
 
 app.use("/clientes", rotaClientes)
 app.use("/funcionarios", rotaFuncionarios)

@@ -1,3 +1,5 @@
+const mysql = require("../mysql").pool
+
 exports.getClientes = (request, response, next) => {
     response.status(200).send({
         mensagem: "tudo certo nos clientes(get)"

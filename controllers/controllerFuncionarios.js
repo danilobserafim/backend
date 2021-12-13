@@ -1,3 +1,5 @@
+const mysql = require("../mysql").pool
+
 exports.getFuncionarios = (request, response, next) => {
     response.status(200).send({
         mensagem: "tudo certo nos Funcionarios(get)"

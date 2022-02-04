@@ -1,29 +1,50 @@
 const mysql = require("../mysql").pool
 
-exports.getClientes = (request, response, next) => {
+exports.getMensagens = (request, response, next) => {
     response.status(200).send({
-        mensagem: "tudo certo nos clientes(get)"
+        mensagem: [{
+            author:"Marcos",
+            message: "Lorem ipsum dolor sit amet.",
+            date: "04/06/2020"
+        },
+        {
+            author:"Mayara",
+            message: "Lorem ipsum dolor sit amet.",
+            date: "06/09/2020"
+        },
+        {
+            author:"Douglas",
+            message: "Lorem ipsum dolor sit amet.",
+            date: "09/12/2020"
+        },
+        {
+            author:"Thiago",
+            message: "Lorem ipsum dolor sit amet.",
+            date: "15/08/2021"
+        },
+        
+    ]
 
     })
 }
 
-exports.postClientes =  (request, response, next) => {
+exports.postMensagens =  (request, response, next) => {
     response.status(200).send({
-        mensagem: "tudo certo nos clientes(post)"
+        mensagem: "tudo certo nos Mensagens(post)"
 
     })
 }
 
-exports.patchClientes = (request, response, next) => {
+exports.patchMensagens = (request, response, next) => {
     response.status(200).send({
-        mensagem: "tudo certo nos clientes(patch)"
+        mensagem: "tudo certo nos Mensagens(patch)"
 
     })
 }
 
-exports.deleteClientes = (request, response, next) => {
+exports.deleteMensagens = (request, response, next) => {
     response.status(200).send({
-        mensagem: "tudo certo nos clientes(delete)"
+        mensagem: "tudo certo nos Mensagens(delete)"
 
     })
 }

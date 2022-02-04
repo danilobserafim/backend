@@ -4,7 +4,7 @@ const mysql = require("../mysql").pool
 
 const rotaClientes = require("../controllers/controllerClientes")
 
-router.get("/", rotaClientes.getClientes)
+router.get("/", rotaClientes.getMensagens)
 router.post("/", rotaClientes.postClientes)
 router.patch("/", rotaClientes.patchClientes)
 router.delete("/", rotaClientes.deleteClientes)

@@ -4,7 +4,10 @@ const rotaClientes = require("./routes/clientes")
 const rotaFuncionarios = require("./routes/funcionarios")
 const rotaProdutos = require("./routes/produtos")
 var bodyParser = require("./node_modules/body-parser/index")
+import cors from "cors";
 
+
+app.use(cors())
 app.use(bodyParser.urlencoded({extend: false}))
 app.use(bodyParser.json())
 

@@ -1,8 +1,9 @@
 const mysql = require("../mysql").pool
 
 exports.getClientes = (request, response, next) => {
-    response.status(200).send(
-        {
+    response.status(200).send({
+        mensagens: [
+            {
             author: "Douglas",
             content: "Lorem ipsum dolor sit amet consectetur.",
             date: "13/01/2022"
@@ -21,8 +22,8 @@ exports.getClientes = (request, response, next) => {
             author: "Danilo",
             content: "Lorem ipsum dolor sit amet consectetur.",
             date: "03/02/2022"
-        },
-    )
+        }]
+    })
 }
 
 exports.postClientes =  (request, response, next) => {

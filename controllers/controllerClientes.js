@@ -5,8 +5,7 @@ exports.getClientes = (request, response, next) => {
         async ()=>{
             const query = "SELECT author, content, date FROM coments"
             const { rows } = await db.query(query)
-            return rows || []
-
+            return {coments: rows || []}
         }
     )
 }

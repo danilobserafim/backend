@@ -20,7 +20,7 @@ app.use((request, response, next) => {
     next();
 })
 
-app.use("/clientes", rotaClientes)
+app.use("/comentarios", rotaClientes)
 app.use("/funcionarios", rotaFuncionarios)
 app.use("/produtos", rotaProdutos)
 

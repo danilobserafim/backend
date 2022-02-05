@@ -1,12 +1,15 @@
 import db from "../routes/db";
 
 exports.getClientes = (request, response, next) => {
+    const comentsFunc = async ()=>{
+        const query = "SELECT author, content, date FROM coments"
+        const { rows } = await db.query(query)
+        return rows || []
+
+    }
+    const coments = comentsFunc()
     response.status(200).send(
-        async ()=>{
-            const query = "SELECT author, content, date FROM coments"
-            const { rows } = await db.query(query)
-            return {coments: rows || []}
-        }
+        coments
     )
 }
 

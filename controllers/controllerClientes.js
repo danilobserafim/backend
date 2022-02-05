@@ -3,8 +3,8 @@ import db from "../routes/db";
 exports.getClientes = (request, response, next) => {
     response.status(200).send(
         async ()=>{
-            const query = "SELECT userName, uuid FROM coments"
-            const { rows } = await db.query<user>(query)
+            const query = "SELECT author, content, date FROM coments"
+            const { rows } = await db.query(query)
             return rows || []
 
         }

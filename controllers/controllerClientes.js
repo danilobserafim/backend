@@ -1,32 +1,18 @@
-const mysql = require("../mysql").pool
+import db from "../routes/db";
 
 exports.getClientes = (request, response, next) => {
-    response.status(200).send({
-        mensagens: [
-            {
-            author: "Douglas",
-            content: "Lorem ipsum dolor sit amet consectetur.",
-            date: "13/01/2022"
-        },
-        {
-            author: "Mayara",
-            content: "Lorem ipsum dolor sit amet consectetur.",
-            date: "18/01/22"
-        },
-        {
-            author: "Marcos",
-            content: "Lorem ipsum dolor sit amet consectetur.",
-            date: "25/01/2022"
-        },
-        {
-            author: "Danilo",
-            content: "Lorem ipsum dolor sit amet consectetur.",
-            date: "03/02/2022"
-        }]
-    })
+    response.status(200).send(
+        async ()=>{
+            const query = "SELECT userName, uuid FROM coments"
+            const { rows } = await db.query<user>(query)
+            return rows || []
+
+        }
+    )
 }
 
 exports.postClientes =  (request, response, next) => {
+
     response.status(200).send(
     )
 }
